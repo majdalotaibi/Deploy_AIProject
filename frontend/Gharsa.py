@@ -40,6 +40,44 @@ welcome_icon_path = os.path.join(script_dir, "images", "welcome_icon.png")
 with open(welcome_icon_path, "rb") as f:
     welcome_icon_base64 = base64.b64encode(f.read()).decode()
 
+# st.markdown("""
+#     <style>
+#     .navbar {
+#         display: flex;
+#         justify-content: center;
+#         gap: 40px;
+#         background-color: rgba(255,255,255,0.8);
+#         padding: 15px;
+#         font-family: 'Marhey', sans-serif;
+#         font-size: 22px;
+#         direction: rtl;
+#         border-radius: 10px;
+#         box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+#     }
+#     .navbar a {
+#         text-decoration: none;
+#         color: #333;
+#         padding: 8px 15px;
+#         border-radius: 6px;
+#     }
+#     .navbar a:hover {
+#         background-color: rgba(139,94,60,0.1);
+#         color: #8b5e3c;
+#     }
+#     .active-nav {
+#         color: #8b5e3c !important;
+#         border-bottom: 2px solid #8b5e3c;
+#     }
+#     </style>
+#     <div class="navbar">
+#         <a href="/Gharsa" target="_self" class="active-nav">الرئيسية</a>
+#         <a href="/Plants_info" target="_self">تعرف على النباتات</a>
+#         <a href="/what_is_the_plant" target="_self">ماهي نبتتي؟</a>
+#         <a href="/Plant_your_plant" target="_self">ازرع نبتتك</a>
+#         <a href="/Check_your_plant" target="_self">افحص نبتتك</a>
+#         <a href="/Team_members" target="_self">الأعضاء</a>
+#     </div>
+# """, unsafe_allow_html=True)
 st.markdown("""
     <style>
     .navbar {
@@ -70,12 +108,12 @@ st.markdown("""
     }
     </style>
     <div class="navbar">
-        <a href="/Gharsa" target="_self" class="active-nav">الرئيسية</a>
-        <a href="/Plants_info" target="_self">تعرف على النباتات</a>
-        <a href="/what_is_the_plant" target="_self">ماهي نبتتي؟</a>
-        <a href="/Plant_your_plant" target="_self">ازرع نبتتك</a>
-        <a href="/Check_your_plant" target="_self">افحص نبتتك</a>
-        <a href="/Team_members" target="_self">الأعضاء</a>
+        <a href="#" onclick="window.location.href='/Gharsa'" class="active-nav">الرئيسية</a>
+        <a href="#" onclick="window.location.href='/Plants_info'">تعرف على النباتات</a>
+        <a href="#" onclick="window.location.href='/what_is_the_plant'">ماهي نبتتي؟</a>
+        <a href="#" onclick="window.location.href='/Plant_your_plant'">ازرع نبتتك</a>
+        <a href="#" onclick="window.location.href='/Check_your_plant'">افحص نبتتك</a>
+        <a href="#" onclick="window.location.href='/Team_members'">الأعضاء</a>
     </div>
 """, unsafe_allow_html=True)
 

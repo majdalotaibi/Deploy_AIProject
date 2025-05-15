@@ -664,7 +664,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# Navigation logic
+# Initialize session state for page
 if 'page' not in st.session_state:
     st.session_state.page = 'Gharsa'
 
@@ -709,21 +709,22 @@ st.markdown("""
         background-color: rgba(139,94,60,0.1);
         color: #8b5e3c;
     }
-    .active-nav {
-        color: #8b5e3c !important;
-        border-bottom: 2px solid #8b5e3c;
-    }
     </style>
     <div class="navbar">
-        <a href="#" onclick="window.location.href='/Gharsa'; st.experimental_rerun();">الرئيسية</a>
-        <a href="#" onclick="window.location.href='/Plants_info'; st.experimental_rerun();">تعرف على النباتات</a>
-        <a href="#" onclick="window.location.href='/what_is_the_plant'; st.experimental_rerun();">ماهي نبتتي؟</a>
-        <a href="#" onclick="window.location.href='/Plant_your_plant'; st.experimental_rerun();">ازرع نبتتك</a>
-        <a href="#" onclick="window.location.href='/Check_your_plant'; st.experimental_rerun();">افحص نبتتك</a>
-        <a href="#" onclick="window.location.href='/Team_members'; st.experimental_rerun();">الأعضاء</a>
+        <a href="#" onclick="setPage('Gharsa'); return false;">الرئيسية</a>
+        <a href="#" onclick="setPage('Plants_info'); return false;">تعرف على النباتات</a>
+        <a href="#" onclick="setPage('what_is_the_plant'); return false;">ماهي نبتتي؟</a>
+        <a href="#" onclick="setPage('Plant_your_plant'); return false;">ازرع نبتتك</a>
+        <a href="#" onclick="setPage('Check_your_plant'); return false;">افحص نبتتك</a>
+        <a href="#" onclick="setPage('Team_members'); return false;">الأعضاء</a>
     </div>
+    
+    <script>
+    function setPage(page) {
+        fetch(`/?page=${page}`).then(() => window.location.reload());
+    }
+    </script>
 """, unsafe_allow_html=True)
-
 # Load images
 logo_path = os.path.join(script_dir, "images", "Logo.png")
 with open(logo_path, "rb") as f:

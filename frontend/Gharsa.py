@@ -108,8 +108,8 @@ st.markdown("""
     }
     </style>
     <div class="navbar">
-        <a href="#" onclick="window.location.href='/Gharsa'" class="active-nav">الرئيسية</a>
-        <a href="#" onclick="window.location.href='/Plants_info'">تعرف على النباتات</a>
+        <a href="/Gharsa" onclick="window.location.href='/Gharsa'" class="active-nav">الرئيسية</a>
+        <a href="/Plants_info" onclick="window.location.href='/Plants_info'">تعرف على النباتات</a>
         <a href="#" onclick="window.location.href='/what_is_the_plant'">ماهي نبتتي؟</a>
         <a href="#" onclick="window.location.href='/Plant_your_plant'">ازرع نبتتك</a>
         <a href="#" onclick="window.location.href='/Check_your_plant'">افحص نبتتك</a>
